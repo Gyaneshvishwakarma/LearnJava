@@ -3,29 +3,29 @@ public class EggDropUnlimited {
         int low = 1, high = n;
 
         while (low <= high) {
-            int mid = low + (high - low) / 2; // Find middle floor
+            int mid = low + (high - low) / 2; 
 
-            // Simulating egg breaking condition (you would replace this with actual test)
+            
             boolean eggBreaks = doesEggBreak(mid);
 
             if (eggBreaks) {
-                high = mid - 1; // Search in lower half
+                high = mid - 1; 
             } else {
-                low = mid + 1; // Search in upper half
+                low = mid + 1; 
             }
         }
 
-        return high; // Critical floor found
+        return high;
     }
 
-    // Simulated function to determine if the egg breaks (Replace with real check)
+    
     private static boolean doesEggBreak(int floor) {
-        int CRITICAL_FLOOR = 25; // Assume the egg breaks at floor 25
+        int CRITICAL_FLOOR = 25; 
         return floor >= CRITICAL_FLOOR;
     }
 
     public static void main(String[] args) {
-        int floors = 100; // Example: 100 floors
+        int floors = 100; 
         int result = findCriticalFloor(floors);
         System.out.println("The critical floor is: " + result);
     }
